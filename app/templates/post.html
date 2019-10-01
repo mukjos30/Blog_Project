@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf%}
+
+{% block styles%}
+    {{super()}}
+    <link rel="stylesheet" href="../static/css/post.css">
+{% endblock %}
+
+{% block content%}
+<h1 class="text-center">{{post.title}}</h1>
+    <div class="container content">
+        <div class="post-card text-center">
+            <div class="img-container">
+                <img class="text-center img-responsive" src="{{url_for('static', filename=post.image)}}" alt="" height="600px"
+                    width="750px">
+            </div>
+            <h2>{{post.title}}</h2>
+            <h3><em>By {{post.user.full_name}} | {{post.time[0:10]}} at {{post.time[11:16]}}</em></h3>
+            <div>
+                <p>{{post.content}}</p>
+            </div>
+        </div>
+        <div class="row comment-row">
+            <div class="comment-card col-sm-4">
+                <h3>Leave a Comment</h3>
+                {{wtf.quick_form(form)}}
+            </div>
+            <div class="comments-card col-sm-6">
+                <h3>Comments</h3>
+                {% if comments %}
+                {% for comment in comments%}
+                <p><strong>{{comment.name}}</strong>: {{comment.content}} {% if current_user.is_authenticated %}<a href="{{url_for('main.delete_comment', id = comment.id)}}"><i class="fas fa-trash-alt"></i></a>{% endif %}</p>
+                {% endfor%}
+                {% else %}
+                <p>There are no comments</p>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+{% endblock%}
+

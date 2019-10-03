@@ -9,6 +9,7 @@ from app.email import create_mail
 
 @main.route("/", methods = ["GET","POST"])
 def index():
+    title = "Home"
     form = SubscribeForm()
     if form.validate_on_submit():
         email = form.email.data
@@ -18,7 +19,7 @@ def index():
         flash("Thank You for subscribing!")
         return redirect(url_for("main.index"))
     posts = Post.query.order_by(Post.time.desc())
-    title = "Home"
+    
     return render_template("index.html",posts = posts,form = form,title = title)
 
 @main.route("/add/post/",methods = ["GET","POST"])
@@ -37,7 +38,7 @@ def add_post():
             pic = photos.save(request.files["photo"])
             file_path = f"photos/{pic}"
             image = file_path
-        new_post = Post(title = title, content = content, user = current_user,image = image,time = posted)
+        new_post = Post(title = title, content = content, user = current_user,time = posted)
         new_post.save_post()
         subscribers = Subscriber.query.all()
         emails = []

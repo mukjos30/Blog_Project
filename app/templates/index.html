@@ -20,8 +20,8 @@
                     {% for post in posts %}
                     <div class="post-card mb-5 text-center">
                         <div class="img-container">
-                        <!-- <img class="text-center img-responsive" src="{{url_for('static', filename=post.image)}}" alt="" height="600px" -->
-                            width="750px">
+                        
+                           
                         </div>
                         <h2>{{post.title}}</h2>
                         <h3><em>By {{post.user.full_name}} | {{post.time[0:10]}} at {{post.time[11:16]}}</em></h3>
@@ -37,9 +37,7 @@
             </div>
             <div class="col-sm-2" style="overflow-y: hidden; margin-top: 5px">
                 {{wtf.quick_form(form)}}
-                {{wtf.quick_form(subscribe_form)}}
             </div>
     </div>
 
 {% endblock %}
-

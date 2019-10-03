@@ -1,4 +1,4 @@
-/* body {
+ body {
     background: #eceff1;
 }
 * {
@@ -9,20 +9,20 @@
     font-family: Josefin Sans;
 }
 h1,h2,h3,h4,h5,h6 {
-    /* font-family: Dancing Script; */
-    /* font-size: 2em;
-    overflow: hidden; */
-/* }
+     font-family: Dancing Script;
+    font-size: 2em;
+    overflow: hidden; 
+}
 
-.landing { */
-    /* background-image: url("../images/landing.jpeg"); */
+/* .landing { 
+     background-image: url("../images/landing.jpeg"); */
     /* background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
-    height: 630px;
-    width: 100%
-} */
-/* .title {
+    background-repeat: no-repeat; */
+    /* height: 630px;
+    width: 100% */
+
+.title {
     margin: 20px;
 }
 .card {
@@ -32,7 +32,7 @@ h1,h2,h3,h4,h5,h6 {
 .card-image {
     height: 100px;
 } */
-/* .main {
+ .main {
     width: 100%;
     margin: 0 auto;
     padding: 10px auto;
@@ -42,7 +42,7 @@ h1,h2,h3,h4,h5,h6 {
     align-items: center;
     flex-flow: column;
 } */
-/* .navbar {
+ .navbar {
     margin-bottom: 0;
 }
 .post-card {
@@ -66,4 +66,4 @@ h1,h2,h3,h4,h5,h6 {
 hr {
     color: black;
     height: 10px;
-} */ 
+}  
